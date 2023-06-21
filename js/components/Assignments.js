@@ -9,7 +9,7 @@ export default {
             <assignment-list :assignments="filters.completed" title="Completed"></assignment-list>
             <form @submit.prevent="add">
                 <div class="p-2 border border-gray-600">
-                <input placeholder="New Assignment..." class="text-black">
+                <input v-model="newAssignment" placeholder="New Assignment..." class="text-black">
                 <button type="submit" class="ml-2 ">Add</button>
                 </div>
             </form>
@@ -22,7 +22,8 @@ export default {
                 { name: 'Finish project', complete: false, id: 1 },
                 { name: 'Read Chapter 4', complete: false, id: 2 },
                 { name: 'Turn in Homework ', complete: false, id: 3 },
-            ]
+            ],
+            newAssignment:''
         }
     },
 
@@ -36,9 +37,12 @@ export default {
     },
     methods:{
         add(e){
-            
-            alert('hiya');
-
+            this.assignments.push({
+                name:this.newAssignment,
+                completed:false,
+                id: this.assignments.length +1,
+                });
+            this.newAssignment = '';
         }
     }
 }
