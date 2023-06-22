@@ -1,5 +1,5 @@
 export default {
-    template: `
+    template: /*javascript */`
         <li>
             <label class="p-2 flex justify-between items-center">
                 {{ assignment.name }}

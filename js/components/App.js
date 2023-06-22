@@ -2,5 +2,4 @@
  export default{
     components : {Assignments},
     template : `<assignments></assignments>`,
-   
 }
